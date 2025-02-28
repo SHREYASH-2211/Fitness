@@ -1,0 +1,326 @@
+:root {
+    --primary-purple: #5e35b1;
+    --dark-purple: #2a1b54;
+    --light-purple: #7c4dff;
+    --gradient-start: #7c4dff;
+    --gradient-end: #00e676;
+    --text-light: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --input-bg: rgba(255, 255, 255, 0.1);
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+      "Helvetica Neue", sans-serif;
+    background-color: var(--dark-purple);
+    color: var(--text-light);
+  }
+  
+  .app-container {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 1rem 2rem;
+    overflow-y: auto;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .search-container {
+    flex: 1;
+    max-width: 300px;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: var(--input-bg);
+    color: var(--text-light);
+  }
+  
+  .notifications {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .classes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .class-cards {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
+  
+  .class-card {
+    flex: 0 0 auto;
+    width: 350px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  
+  .class-image {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .yoga-image {
+    background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.20-l4cEyp9AjgoojFYCTI0yMBtw9QvLc0.png");
+  }
+  
+  .gym-image {
+    background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.20-l4cEyp9AjgoojFYCTI0yMBtw9QvLc0.png");
+  }
+  
+  .meditation-image {
+    background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.20-l4cEyp9AjgoojFYCTI0yMBtw9QvLc0.png");
+  }
+  
+  .class-details {
+    padding: 1rem;
+  }
+  
+  .class-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .class-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  .rating {
+    font-size: 0.9rem;
+  }
+  
+  .class-category {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .class-info {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .class-times {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .time-slot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+  
+  .spots {
+    color: var(--text-secondary);
+  }
+  
+  .book-button {
+    padding: 0.25rem 0.75rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: var(--primary-purple);
+    color: white;
+    cursor: pointer;
+  }
+  
+  .view-schedule {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    color: white;
+    cursor: pointer;
+  }
+  
+  .category-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .category-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    padding: 1rem;
+  }
+  
+  .category-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+  }
+  
+  .category-count {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
+  
+  .category-location {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+  
+  .map-container {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .map-container h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .map {
+    height: 200px;
+    background-color: #a8d5e5;
+    border-radius: 0.5rem;
+    position: relative;
+  }
+  
+  .map-controls {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .map-zoom {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .map-locations {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .map-location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+  }
+  
+  .location-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: var(--primary-purple);
+    border-radius: 50%;
+    margin-bottom: 0.25rem;
+  }
+  
+  .location-address {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+  }
+  
+  .help-section {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .help-section h3 {
+    margin-top: 0;
+  }
+  
+  .chat-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--primary-purple);
+    color: white;
+    cursor: pointer;
+  }
+  
+  .navigation-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  .nav-arrow {
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .class-cards {
+      flex-direction: column;
+    }
+  
+    .class-card {
+      width: 100%;
+    }
+  
+    .category-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  

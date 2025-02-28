@@ -1,0 +1,264 @@
+:root {
+    --primary-purple: #5e35b1;
+    --dark-purple: #2a1b54;
+    --light-purple: #7c4dff;
+    --gradient-start: #7c4dff;
+    --gradient-end: #00e676;
+    --text-light: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --input-bg: rgba(255, 255, 255, 0.1);
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+      "Helvetica Neue", sans-serif;
+    background-color: var(--dark-purple);
+    color: var(--text-light);
+  }
+  
+  .app-container {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 1rem 2rem;
+    overflow-y: auto;
+  }
+  
+  .meditation-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .meditation-header h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  .meditation-header p {
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+  }
+  
+  .daily-meditation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .daily-content h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .daily-content p {
+    margin: 0.5rem 0 1rem;
+    font-size: 1rem;
+  }
+  
+  .session-info {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .duration,
+  .type {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.9rem;
+  }
+  
+  .play-button {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .play-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .meditation-sessions {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .session-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+  
+  .session-image {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .morning-mindfulness-image {
+    background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.00-0PqYFr81wFgkADZy3Uwyo1P6txAidQ.png");
+  }
+  
+  .deep-relaxation-image {
+    background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.00-0PqYFr81wFgkADZy3Uwyo1P6txAidQ.png");
+  }
+  
+  .stress-relief-image {
+    background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.00-0PqYFr81wFgkADZy3Uwyo1P6txAidQ.png");
+  }
+  
+  .sleep-better-image {
+    background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.00-0PqYFr81wFgkADZy3Uwyo1P6txAidQ.png");
+  }
+  
+  .session-icon {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  
+  .session-details {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .session-details h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  .session-duration {
+    margin: 0.5rem 0 1rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+  
+  .start-button {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+  }
+  
+  .meditation-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .stat-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+  }
+  
+  .stat-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+  
+  .mindfulness-icon {
+    background-color: #7c4dff;
+  }
+  
+  .time-icon {
+    background-color: #4caf50;
+  }
+  
+  .stress-icon {
+    background-color: #2196f3;
+  }
+  
+  .stat-details h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  .stat-value {
+    margin: 0.25rem 0 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navigation-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  .nav-arrow {
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .daily-meditation {
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: center;
+    }
+  
+    .meditation-sessions {
+      grid-template-columns: 1fr;
+    }
+  
+    .meditation-stats {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  

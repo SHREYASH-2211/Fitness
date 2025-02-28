@@ -1,0 +1,398 @@
+:root {
+    --primary-purple: #5e35b1;
+    --dark-purple: #2a1b54;
+    --light-purple: #7c4dff;
+    --gradient-start: #7c4dff;
+    --gradient-end: #00e676;
+    --text-light: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --input-bg: rgba(255, 255, 255, 0.1);
+    --heart-color: #ff5252;
+    --hydration-color: #2196f3;
+    --sleep-color: #9c27b0;
+    --stress-color: #ff9800;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+      "Helvetica Neue", sans-serif;
+    background-color: var(--dark-purple);
+    color: var(--text-light);
+  }
+  
+  .app-container {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 1rem 2rem;
+    overflow-y: auto;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .search-container {
+    flex: 1;
+    max-width: 300px;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: var(--input-bg);
+    color: var(--text-light);
+  }
+  
+  .notifications {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .welcome-section {
+    margin-bottom: 2rem;
+  }
+  
+  .welcome-section h1 {
+    margin: 0;
+    font-size: 1.75rem;
+  }
+  
+  .subtitle {
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .action-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .action-button:hover {
+    transform: translateY(-2px);
+  }
+  
+  .workout-button {
+    background-color: #7c4dff;
+    color: white;
+  }
+  
+  .meditate-button {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .meal-button {
+    background-color: #2196f3;
+    color: white;
+  }
+  
+  .community-button {
+    background-color: #e91e63;
+    color: white;
+  }
+  
+  .metrics-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .metric-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    padding: 1rem;
+  }
+  
+  .metric-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+  }
+  
+  .metric-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .metric-progress {
+    height: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.25rem;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    border-radius: 0.25rem;
+  }
+  
+  .heart-progress {
+    width: 72%;
+    background-color: var(--heart-color);
+  }
+  
+  .hydration-progress {
+    width: 75%;
+    background-color: var(--hydration-color);
+  }
+  
+  .sleep-progress {
+    width: 75%;
+    background-color: var(--sleep-color);
+  }
+  
+  .stress-progress {
+    width: 35%;
+    background-color: var(--stress-color);
+  }
+  
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .section-header h2 {
+    margin: 0;
+  }
+  
+  .date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+  
+  .schedule-section,
+  .insights-section {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+  }
+  
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+  }
+  
+  .timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0.5rem;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .timeline-item {
+    display: flex;
+    gap: 1rem;
+    position: relative;
+  }
+  
+  .timeline-dot {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--primary-purple);
+    z-index: 1;
+  }
+  
+  .timeline-content {
+    flex: 1;
+  }
+  
+  .timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25rem;
+  }
+  
+  .timeline-header h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  .time {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+  
+  .timeline-content p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+  
+  .insights-section h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .insight-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .insight-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .insight-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+  
+  .achievements-section {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+  }
+  
+  .achievements-section h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+  
+  .badges-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .badge-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0.5rem;
+  }
+  
+  .badge-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .fitness-badge {
+    background-color: #ffc107;
+  }
+  
+  .power-badge {
+    background-color: #7c4dff;
+  }
+  
+  .goal-badge {
+    background-color: #4caf50;
+  }
+  
+  .streak-badge {
+    background-color: #f44336;
+  }
+  
+  .badge-card h3 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1rem;
+  }
+  
+  .badge-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+  
+  .navigation-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  .nav-arrow {
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .metrics-section {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .badges-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  
