@@ -1,0 +1,204 @@
+/* Import Remixicon */
+@import url("https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css");
+
+/* Variables */
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --body-font: 'Poppins', sans-serif;
+    --normal-font-size: 1rem;
+    --small-font-size: .813rem;
+  }
+  
+  /* Base */
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--white-color);
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  /* Login */
+  .login {
+    position: relative;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+  }
+  
+  .login__img {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .login__form {
+      position: relative;
+      background-color: rgba(255, 255, 255, 0.3); /* Transparent background */
+      backdrop-filter: blur(20px);
+      border-radius: 1rem;
+      padding: 2rem 1rem;
+      text-align: center;
+      width: 300px;
+      color: white;
+      margin-left:35vw;
+      border: 2px solid black
+    }
+    
+  
+  .login__title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .login__content,
+  .login__box {
+    display: grid;
+  }
+  
+  .login__content {
+    row-gap: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .login__box {
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    column-gap: .75rem;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  .login__icon,
+  .login__eye {
+    font-size: 1.25rem;
+  }
+  
+  .login__input {
+    width: 100%;
+    padding-block: .8rem;
+    background: none;
+    color: var(--black-color);
+    position: relative;
+    z-index: 1;
+    border: none;
+    outline: none;
+  }
+  
+  .login__box-input {
+    position: relative;
+  }
+  
+  .login__label {
+    position: absolute;
+    left: 0;
+    top: 13px;
+    font-weight: 500;
+    transition: .3s;
+  }
+  
+  .login__eye {
+    position: absolute;
+    right: 0;
+    top: 18px;
+    z-index: 10;
+    cursor: pointer;
+  }
+  
+  .login__box:nth-child(2) input {
+    padding-right: 1.8rem;
+  }
+  
+  .login__check,
+  .login__check-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .login__check {
+    margin-bottom: 1.5rem;
+  }
+  
+  .login__check-label,
+  .login__forgot,
+  .login__register {
+    font-size: var(--small-font-size);
+  }
+  
+  .login__check-group {
+    column-gap: .5rem;
+  }
+  
+  .login__check-input {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .login__forgot {
+    color: var(--black-color);
+  }
+  
+  .login__forgot:hover {
+    text-decoration: underline;
+  }
+  
+  .login__button {
+    width: 100%;
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: var(--black-color);
+    font-weight: 500;
+    color: var(--white-color);
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+  
+  .login__register {
+    font-weight: 500;
+  }
+  
+  .login__register a {
+    color: var(--black-color);
+  }
+  
+  .login__register a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Input focus move up label */
+  .login_input:focus + .login_label {
+    top: -12px;
+    font-size: var(--small-font-size);
+  }
+  
+  /* Input focus sticky top label */
+  .login_input:not(:placeholder-shown).logininput:not(:focus) + .login_label {
+    top: -12px;
+    font-size: var(--small-font-size);
+  }
+  
+  /* For medium devices */
+  @media screen and (min-width: 576px) {
+    .login {
+      justify-content: center;
+    }
+    .login__form {
+      width: 432px;
+      padding: 4rem 3rem 3.5rem;
+      border-radius: 1.5rem;
+    }
+    .login__title {
+      font-size: 2rem;
+    }
+  }

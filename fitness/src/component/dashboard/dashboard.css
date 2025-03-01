@@ -52,14 +52,17 @@ body {
 /* Header */
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* justify-content: space-between; */
+  /* align-items: center; */
   background: var(--card-bg);
   padding: 12px 20px;
   border-radius: 10px;
   backdrop-filter: blur(5px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 25px;
+}
+.header .pfp{
+  margin-left: 800;
 }
 
 .search-container .search-input {

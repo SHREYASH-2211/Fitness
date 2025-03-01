@@ -1,5 +1,6 @@
 import "./dashboard.css"
 import Sidebar from "../sidebar/sidebar.jsx"
+import { CgProfile } from "react-icons/cg";
 // import React from "react";
 // import Nav from "./Nav";
 // import Cards from "./Cards";
@@ -17,12 +18,7 @@ const Dashboard = () => {
 
       <main className="main-content">
         <header className="header">
-          <div className="search-container">
-            <input type="text" placeholder="Search..." className="search-input" />
-          </div>
-          <div className="notifications">
-            <span className="notification-icon">🔔</span>
-          </div>
+        <CgProfile  size={30} />
         </header>
 
         <div className="welcome-section">
