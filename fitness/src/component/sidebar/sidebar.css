@@ -73,6 +73,29 @@
     background-color: rgba(255, 255, 255, 0.1);
   }
   
+  .nav-item-yoga {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Adjust spacing */
+    text-decoration: none; /* Remove underline */
+    color: white !important; /* Keep text color white */
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  .nav-item-yoga:visited {
+    color: white !important; /* Keep visited links white */
+  }
+  
+  .nav-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+  }
+  
+
   .nav-icon {
     width: 1.5rem;
     height: 1.5rem;

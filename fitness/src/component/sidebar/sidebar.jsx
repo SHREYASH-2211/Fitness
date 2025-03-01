@@ -30,10 +30,19 @@ const Sidebar = () => {
           <span className="nav-text">Diet Planner</span>
         </Link>
 
-        <Link to="/yoga-gym" className="nav-item">
-          <span className="nav-icon yoga-icon"></span>
-          <span className="nav-text">Yoga & Gym</span>
-        </Link>
+        <Link
+        to="#"
+        className="nav-item-yoga"
+        onClick={(e) => {
+        e.preventDefault(); // Prevent default behavior
+        window.location.href = "https://hwffvj.csb.app/"; // Redirect in same tab
+      }}
+>
+  <span className="nav-icon yoga-icon"></span>
+  <span className="nav-text">Yoga & Gym</span>
+</Link>
+
+
 
         <Link to="/maps" className="nav-item">
           <span className="nav-icon maps-icon"></span>
