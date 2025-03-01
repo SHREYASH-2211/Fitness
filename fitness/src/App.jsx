@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Axios from "axios"
+// import Axios from "axios"
 // import Sidebar from "./component/sidebar/sidebar.jsx";
 import CommunityPage from "./component/community/community.jsx";
 import Dashboard from "./component/dashboard/dashboard.jsx";
