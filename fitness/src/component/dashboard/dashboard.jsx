@@ -17,9 +17,9 @@ const Dashboard = () => {
 
       <main className="main-content">
         <header className="header">
-          <div className="search-container">
+          {/* <div className="search-container">
             <input type="text" placeholder="Search..." className="search-input" />
-          </div>
+          </div> */}
           <div className="notifications">
             <span className="notification-icon">🔔</span>
           </div>

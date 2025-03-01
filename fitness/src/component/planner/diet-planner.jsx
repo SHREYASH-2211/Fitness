@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DietCard from "./diet-card.jsx"; 
 import "./diet-planner.css";
 import Sidebar from "../sidebar/sidebar.jsx";
-
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 const DietPlanner = () => {
   const meals = ["Breakfast", "Lunch", "Dinner", "Snacks"];
   const [currentMeal, setCurrentMeal] = useState("Breakfast");
@@ -37,33 +37,33 @@ const DietPlanner = () => {
       case "Dinner":
         return {
           "Main Course": [
-            { title: "Roti", calories: 100, image: "https://via.placeholder.com/150?text=Roti" },
-            { title: "Chapati", calories: 90, image: "https://via.placeholder.com/150?text=Chapati" },
-            { title: "Dal", calories: 150, image: "https://via.placeholder.com/150?text=Dal" },
-            { title: "Rice", calories: 130, image: "https://via.placeholder.com/150?text=Rice" },
-            { title: "Paneer Bhurji", calories: 200, image: "https://via.placeholder.com/150?text=Paneer+Bhurji" },
-            { title: "Aloo Gobi", calories: 180, image: "https://via.placeholder.com/150?text=Aloo+Gobi" },
-            { title: "Bhindi Masala", calories: 150, image: "https://via.placeholder.com/150?text=Bhindi+Masala" },
-            { title: "Baingan Bharta", calories: 170, image: "https://via.placeholder.com/150?text=Baingan+Bharta" },
-            { title: "Palak Paneer", calories: 220, image: "https://via.placeholder.com/150?text=Palak+Paneer" }
+            { title: "Roti", calories: 100, image: "./src/images/roti.webp" },
+            { title: "Chapati", calories: 90, image: "./src/images/chapati.webp" },
+            { title: "Dal", calories: 150, image: "./src/images/dal.webp" },
+            { title: "Rice", calories: 130, image: "./src/images/rice.webp" },
+            { title: "Paneer Bhurji", calories: 200, image: "./src/images/paneer.webp" },
+            { title: "Aloo Gobi", calories: 180, image: "./src/images/aloo.webp" },
+            { title: "Bhindi Masala", calories: 150, image: "./src/images/bhindi.webp" },
+            { title: "Baingan Bharta", calories: 170, image: "./src/images/baigan.webp" },
+            { title: "Palak Paneer", calories: 220, image: "./src/images/palak.webp" }
           ],
           "Desserts": [
-            { title: "Gulab Jamun", calories: 150, image: "https://via.placeholder.com/150?text=Gulab+Jamun" },
-            { title: "Rasgulla", calories: 100, image: "https://via.placeholder.com/150?text=Rasgulla" },
-            { title: "Ice Cream", calories: 250, image: "https://via.placeholder.com/150?text=Ice+Cream" }
+            { title: "Gulab Jamun", calories: 150, image: "./src/images/gulab.webp" },
+            { title: "Rasgulla", calories: 100, image: "./src/images/ras.webp" },
+            { title: "Ice Cream", calories: 250, image: "./src/images/ice.webp" }
           ]
         };
       case "Snacks":
         return {
           "Snack Items": [
-            { title: "Samosa", calories: 250, image: "https://via.placeholder.com/150?text=Samosa" },
-            { title: "Bhel Puri", calories: 150, image: "https://via.placeholder.com/150?text=Bhel+Puri" },
-            { title: "Kachori", calories: 180, image: "https://via.placeholder.com/150?text=Kachori" },
-            { title: "Pakora", calories: 100, image: "https://via.placeholder.com/150?text=Pakora" },
-            { title: "Dhokla", calories: 120, image: "https://via.placeholder.com/150?text=Dhokla" },
-            { title: "Tea", calories: 30, image: "https://via.placeholder.com/150?text=Tea" },
-            { title: "Coffee", calories: 50, image: "https://via.placeholder.com/150?text=Coffee" },
-            { title: "Jalebi", calories: 180, image: "https://via.placeholder.com/150?text=Jalebi" }
+            { title: "Samosa", calories: 250, image: "./src/images/samosa.webp" },
+            { title: "Bhel Puri", calories: 150, image: "./src/images/bhel.webp" },
+            { title: "Kachori", calories: 180, image: "./src/images/kachori.webp" },
+            { title: "Pakora", calories: 100, image: "./src/images/pakora.webp" },
+            { title: "Dhokla", calories: 120, image: "./src/images/dhokla.webp" },
+            { title: "Tea", calories: 30, image: "./src/images/tea.webp" },
+            { title: "Coffee", calories: 50, image: "./src/images/coffee.webp" },
+            { title: "Jalebi", calories: 180, image: "./src/images/jalebi.webp" }
           ]
         };
       default:
@@ -182,8 +182,9 @@ const DietPlanner = () => {
 
   return (
     <>
+
     <Sidebar />
-    <div className="diet-planner">
+    <div className="diet-planner w-full px-4 md:px-8 lg:px-16">
       
       <h2>Diet Planner</h2>
 

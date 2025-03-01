@@ -6,7 +6,7 @@ const Sidebar = () => {
     <aside className="sidebar">
       <div className="logo-container">
         <div className="logo-icon"></div>
-        <h1 className="logo-text">VitalSync</h1>
+        <h1 className="logo-text">Wellness360</h1>
       </div>
 
       <nav className="sidebar-nav">

@@ -105,6 +105,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    padding-right: 40px;
 }
 
 .gym-cards {
@@ -112,15 +113,19 @@ body {
     grid-template-columns: repeat(2, 1fr); /* Ensures two cards per row */
     gap: 20px;
     width: 100%;
+    /* padding-right: 10px; */
+    /* padding-left: 20px;
+    margin-left: 20px; */
 }
 
 .gym-card {
     background-color: var(--mid-blue);
     border: 1px solid var(--light-teal);
-    padding: 15px;
+    padding: 5px;
     border-radius: 8px;
     transition: background-color 0.3s ease;
     width: 100%;
+    
 }
 
 .gym-card:hover {
