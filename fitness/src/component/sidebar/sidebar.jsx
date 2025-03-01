@@ -35,7 +35,7 @@ const Sidebar = () => {
           <span className="nav-text">Yoga & Gym</span>
         </Link>
 
-        <Link to="/yoga-gym" className="nav-item">
+        <Link to="/maps" className="nav-item">
           <span className="nav-icon maps-icon"></span>
           <span className="nav-text">Maps</span>
         </Link>

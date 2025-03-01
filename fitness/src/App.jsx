@@ -5,6 +5,7 @@ import Dashboard from "./component/dashboard/dashboard.jsx";
 import Meditation from "./component/meditation/meditation.jsx";
 import Classes from "./component/classes/find-classes.jsx";
 import Planner from "./component/planner/diet-planner.jsx";
+import Map from "./component/maps/mapsearch.jsx";
 // import Yoga from "./component/yoga/yogapath.jsx";
 // Import other page components
 
@@ -18,7 +19,7 @@ function App() {
         <Route path="/meditation" element={<Meditation />} />
         <Route path="/find-classes" element={<Classes />} />
         <Route path="/diet-planner" element={<Planner />} />
-        {/* <Route path="/yoga-gym" element={<Yoga />} /> */}
+        <Route path="/maps" element={<Map />} />
       </Routes>
     </div>
   );
