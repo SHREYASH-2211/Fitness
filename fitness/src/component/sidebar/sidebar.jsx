@@ -6,7 +6,7 @@ const Sidebar = () => {
     <aside className="sidebar">
       <div className="logo-container">
         <div className="logo-icon"></div>
-        <h1 className="logo-text">VitalSync</h1>
+        <h1 className="logo-text">Wellness360</h1>
       </div>
 
       <nav className="sidebar-nav">
@@ -35,7 +35,7 @@ const Sidebar = () => {
           <span className="nav-text">Yoga & Gym</span>
         </Link>
 
-        <Link to="/yoga-gym" className="nav-item">
+        <Link to="/maps" className="nav-item">
           <span className="nav-icon maps-icon"></span>
           <span className="nav-text">Maps</span>
         </Link>

@@ -45,6 +45,17 @@ const LoginForm = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
+        <div className="login__box">
+          <i className="ri-user-3-line login__icon"></i>
+          <input
+            type="email"
+            required
+            className="login__input"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
 
         <div className="login__box">
           <i className="ri-lock-2-line login__icon"></i>
