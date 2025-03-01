@@ -1,216 +1,222 @@
 :root {
-    --primary-purple: #5e35b1;
-    --dark-purple: #2a1b54;
-    --light-purple: #7c4dff;
-    --gradient-start: #7c4dff;
-    --gradient-end: #00e676;
-    --text-light: #ffffff;
-    --text-secondary: rgba(255, 255, 255, 0.7);
-    --card-bg: rgba(255, 255, 255, 0.1);
-    --input-bg: rgba(255, 255, 255, 0.1);
-  }
-  
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-      "Helvetica Neue", sans-serif;
-    background-color: var(--dark-purple);
-    color: var(--text-light);
-  }
-  
-  .app-container {
-    display: flex;
-    min-height: 100vh;
-    position: relative;
-  }
-  
-  .main-content {
-    flex: 1;
-    padding: 1rem 2rem;
-    overflow-y: auto;
-  }
-  
-  .community-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-  }
-  
-  .community-header h1 {
-    margin: 0;
-    font-size: 2rem;
-  }
-  
-  .community-header p {
-    color: var(--text-secondary);
-    margin: 0;
-  }
-  
-  .new-post-button {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 0.5rem;
-    background-color: var(--light-purple);
-    color: white;
-    font-weight: 500;
-    cursor: pointer;
-  }
-  
+  --primary-purple: #5e35b1;
+  --dark-purple: #2a1b54;
+  --light-purple: #7c4dff;
+  --gradient-start: #7c4dff;
+  --gradient-end: #00e676;
+  --text-light: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --card-bg: rgba(255, 255, 255, 0.1);
+  --input-bg: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  background-color: var(--dark-purple);
+  color: var(--text-light);
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+.main-content {
+  flex: 1;
+  padding: 1rem 2rem;
+  overflow-y: auto;
+}
+
+.community-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.community-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.community-header p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.new-post-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--light-purple);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Modified: Changed to display 3 cards per row instead of auto-fill */
+.posts-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.post-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.user-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--light-purple);
+}
+
+.user-details h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.user-role {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.post-category {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.post-content {
+  padding: 0 1rem;
+}
+
+.post-content p {
+  margin-top: 0;
+  font-size: 0.9rem;
+}
+
+.post-image {
+  width: 100%;
+  height: 180px;
+  border-radius: 0.5rem;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 1rem;
+}
+
+.yoga-image {
+  background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.10-fRUSRDzMirr89SXLmy41qWadhDC9YN.png");
+}
+
+.lemon-water-image {
+  background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.10-fRUSRDzMirr89SXLmy41qWadhDC9YN.png");
+}
+
+.meditation-image {
+  background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.10-fRUSRDzMirr89SXLmy41qWadhDC9YN.png");
+}
+
+.yoga-practice-image {
+  background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.10-fRUSRDzMirr89SXLmy41qWadhDC9YN.png");
+}
+
+.healthy-snacks-image {
+  background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.10-fRUSRDzMirr89SXLmy41qWadhDC9YN.png");
+}
+
+.community-workout-image {
+  background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.10-fRUSRDzMirr89SXLmy41qWadhDC9YN.png");
+}
+
+.post-actions {
+  display: flex;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-right: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.action-count {
+  font-size: 0.9rem;
+}
+
+.navigation-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.nav-arrow {
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* Updated responsive breakpoints for 3-column layout */
+@media (max-width: 1200px) {
   .posts-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 1.5rem;
+      grid-template-columns: repeat(2, 1fr);
   }
-  
-  .post-card {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 0.75rem;
-    overflow: hidden;
-  }
-  
-  .post-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-  }
-  
-  .user-info {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  
-  .user-avatar {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background-color: var(--light-purple);
-  }
-  
-  .user-details h3 {
-    margin: 0;
-    font-size: 1rem;
-  }
-  
-  .user-role {
-    margin: 0;
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-  }
-  
-  .post-category {
-    font-size: 0.8rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  
-  .post-content {
-    padding: 0 1rem;
-  }
-  
-  .post-content p {
-    margin-top: 0;
-    font-size: 0.9rem;
-  }
-  
-  .post-image {
-    width: 100%;
-    height: 180px;
-    border-radius: 0.5rem;
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 1rem;
-  }
-  
-  .yoga-image {
-    background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.10-fRUSRDzMirr89SXLmy41qWadhDC9YN.png");
-  }
-  
-  .lemon-water-image {
-    background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.10-fRUSRDzMirr89SXLmy41qWadhDC9YN.png");
-  }
-  
-  .meditation-image {
-    background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.10-fRUSRDzMirr89SXLmy41qWadhDC9YN.png");
-  }
-  
-  .yoga-practice-image {
-    background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.10-fRUSRDzMirr89SXLmy41qWadhDC9YN.png");
-  }
-  
-  .healthy-snacks-image {
-    background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.10-fRUSRDzMirr89SXLmy41qWadhDC9YN.png");
-  }
-  
-  .community-workout-image {
-    background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.10-fRUSRDzMirr89SXLmy41qWadhDC9YN.png");
-  }
-  
-  .post-actions {
-    display: flex;
-    padding: 0.75rem 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .action-button {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    margin-right: 1.5rem;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-  }
-  
-  .action-count {
-    font-size: 0.9rem;
-  }
-  
-  .navigation-controls {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 1rem;
-    transform: translateY(-50%);
-    pointer-events: none;
-  }
-  
-  .nav-arrow {
-    width: 3rem;
-    height: 3rem;
-    border: none;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    pointer-events: auto;
-  }
-  
-  @media (max-width: 768px) {
-    .community-header {
+}
+
+@media (max-width: 768px) {
+  .community-header {
       flex-direction: column;
       align-items: flex-start;
       gap: 1rem;
-    }
-  
-    .new-post-button {
-      align-self: flex-end;
-    }
-  
-    .posts-container {
-      grid-template-columns: 1fr;
-    }
   }
-  
-  
+
+  .new-post-button {
+      align-self: flex-end;
+  }
+
+  .posts-container {
+      grid-template-columns: 1fr;
+  }
+}

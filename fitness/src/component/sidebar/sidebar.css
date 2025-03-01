@@ -86,15 +86,15 @@
     content: "🏠";
   }
   
-  .assessment-icon::before {
-    content: "🧠";
+  .disease-icon::before {
+    content: "🦠";
+  }
+  
+  .maps-icon::before {
+    content: "📍 ";
   }
   
   .yoga-icon::before {
-    content: "🧘";
-  }
-  
-  .meditation-icon::before {
     content: "🧘‍♀️";
   }
   

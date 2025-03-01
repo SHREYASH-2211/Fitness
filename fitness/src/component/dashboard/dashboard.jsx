@@ -1,5 +1,14 @@
 import "./dashboard.css"
 import Sidebar from "../sidebar/sidebar.jsx"
+// import React from "react";
+// import Nav from "./Nav";
+// import Cards from "./Cards";
+// import ActivityCalendar from "./ActivityCalender";
+// import ActivitiesList from "./ActivityList";
+import Graphs from "./Graph.jsx";
+// import "../Styles/Dashboard.css";
+// import "./ChatBot"
+// import ChatBot from "./ChatBot";
 
 const Dashboard = () => {
   return (
@@ -19,25 +28,6 @@ const Dashboard = () => {
         <div className="welcome-section">
           <h1>Welcome back, Aayush!</h1>
           <p className="subtitle">Here's your health overview for today</p>
-
-          <div className="action-buttons">
-            <button className="action-button workout-button">
-              <span className="button-icon">🏋️</span>
-              Start Workout
-            </button>
-            <button className="action-button meditate-button">
-              <span className="button-icon">🧘</span>
-              Meditate
-            </button>
-            <button className="action-button meal-button">
-              <span className="button-icon">🍽️</span>
-              Log Meal
-            </button>
-            <button className="action-button community-button">
-              <span className="button-icon">👥</span>
-              Community
-            </button>
-          </div>
         </div>
 
         <div className="metrics-section">
@@ -85,6 +75,9 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
+
+
+        <Graphs/>
 
         <div className="dashboard-grid">
           <div className="schedule-section">

@@ -1,210 +1,166 @@
-import "./diet-planner.css"
-import Sidebar from "../sidebar/sidebar"
+import React, { useState } from "react";
+import DietCard from "./diet-card.jsx"; 
+import "./diet-planner.css";
 
-const DietPlannerPage = () => {
+const DietPlanner = () => {
+  const meals = ["Breakfast", "Lunch", "Dinner", "Snacks"];
+  const [currentMeal, setCurrentMeal] = useState("Breakfast");
+
+  // mealPlan: For each meal, store items as an object mapping food title to { cal, count }
+  const [mealPlan, setMealPlan] = useState({
+    Breakfast: {},
+    Lunch: {},
+    Dinner: {},
+    Snacks: {}
+  });
+
+  // Returns meal-specific categories and food items
+  const getCategoriesForMeal = (meal) => {
+    switch (meal) {
+      case "Breakfast":
+        return {
+          "Breakfast Items": [
+            { title: "Poha", calories: 200, image: "https://via.placeholder.com/150?text=Poha" },
+            { title: "Idli", calories: 40, image: "https://via.placeholder.com/150?text=Idli" },
+            { title: "Dosa", calories: 150, image: "https://via.placeholder.com/150?text=Dosa" },
+            { title: "Upma", calories: 250, image: "https://via.placeholder.com/150?text=Upma" },
+            { title: "Paratha", calories: 200, image: "https://via.placeholder.com/150?text=Paratha" },
+            { title: "Tea", calories: 30, image: "https://via.placeholder.com/150?text=Tea" },
+            { title: "Coffee", calories: 50, image: "https://via.placeholder.com/150?text=Coffee" },
+            { title: "Jalebi", calories: 180, image: "https://via.placeholder.com/150?text=Jalebi" }
+          ]
+        };
+      case "Lunch":
+      case "Dinner":
+        return {
+          "Main Course": [
+            { title: "Roti", calories: 100, image: "https://via.placeholder.com/150?text=Roti" },
+            { title: "Chapati", calories: 90, image: "https://via.placeholder.com/150?text=Chapati" },
+            { title: "Dal", calories: 150, image: "https://via.placeholder.com/150?text=Dal" },
+            { title: "Rice", calories: 130, image: "https://via.placeholder.com/150?text=Rice" },
+            { title: "Paneer Bhurji", calories: 200, image: "https://via.placeholder.com/150?text=Paneer+Bhurji" },
+            { title: "Aloo Gobi", calories: 180, image: "https://via.placeholder.com/150?text=Aloo+Gobi" },
+            { title: "Bhindi Masala", calories: 150, image: "https://via.placeholder.com/150?text=Bhindi+Masala" },
+            { title: "Baingan Bharta", calories: 170, image: "https://via.placeholder.com/150?text=Baingan+Bharta" },
+            { title: "Palak Paneer", calories: 220, image: "https://via.placeholder.com/150?text=Palak+Paneer" }
+          ],
+          "Desserts": [
+            { title: "Gulab Jamun", calories: 150, image: "https://via.placeholder.com/150?text=Gulab+Jamun" },
+            { title: "Rasgulla", calories: 100, image: "https://via.placeholder.com/150?text=Rasgulla" },
+            { title: "Ice Cream", calories: 250, image: "https://via.placeholder.com/150?text=Ice+Cream" }
+          ]
+        };
+      case "Snacks":
+        return {
+          "Snack Items": [
+            { title: "Samosa", calories: 250, image: "https://via.placeholder.com/150?text=Samosa" },
+            { title: "Bhel Puri", calories: 150, image: "https://via.placeholder.com/150?text=Bhel+Puri" },
+            { title: "Kachori", calories: 180, image: "https://via.placeholder.com/150?text=Kachori" },
+            { title: "Pakora", calories: 100, image: "https://via.placeholder.com/150?text=Pakora" },
+            { title: "Dhokla", calories: 120, image: "https://via.placeholder.com/150?text=Dhokla" },
+            { title: "Tea", calories: 30, image: "https://via.placeholder.com/150?text=Tea" },
+            { title: "Coffee", calories: 50, image: "https://via.placeholder.com/150?text=Coffee" },
+            { title: "Jalebi", calories: 180, image: "https://via.placeholder.com/150?text=Jalebi" }
+          
+          ]
+        }
+      default:
+        return {};
+    }
+  };
+
+  // Get the appropriate categories for the current meal
+  const categoriesForMeal = getCategoriesForMeal(currentMeal);
+
+  // Called when a DietCard submits a food item with its selected quantity
+  const handleSubmitItem = (food, quantity) => {
+    setMealPlan((prev) => {
+      const currentMealPlan = prev[currentMeal] || {};
+      const existingCount = currentMealPlan[food.title]?.count || 0;
+      return {
+        ...prev,
+        [currentMeal]: {
+          ...currentMealPlan,
+          [food.title]: { cal: food.calories, count: existingCount + quantity }
+        }
+      };
+    });
+  };
+
+  // Delete a food item completely from the current meal
+  const handleDelete = (foodTitle) => {
+    setMealPlan((prev) => {
+      const currentMealPlan = prev[currentMeal] || {};
+      const { [foodTitle]: removed, ...rest } = currentMealPlan;
+      return { ...prev, [currentMeal]: rest };
+    });
+  };
+
+  // Calculate total calories for a given meal
+  const getMealCalories = (meal) =>
+    Object.values(mealPlan[meal] || {}).reduce(
+      (sum, { cal, count }) => sum + cal * count,
+      0
+    );
+
+  const totalDailyCalories = meals.reduce(
+    (total, meal) => total + getMealCalories(meal),
+    0
+  );
+
   return (
-    <div className="app-container">
-      <Sidebar />
+    <div className="diet-planner">
+      <h2>Diet Planner</h2>
 
-      <main className="main-content">
-        <div className="diet-header">
-          <h1>Diet Planner</h1>
-          <p>Track your nutrition and maintain a healthy diet</p>
-          <button className="log-meal-button">
-            <span className="meal-icon">➕</span>
-            Log Meal
+      {/* Meal Selection */}
+      <div className="meal-selector">
+        {meals.map((meal) => (
+          <button
+            key={meal}
+            onClick={() => setCurrentMeal(meal)}
+            className={`meal-btn ${currentMeal === meal ? "active" : ""}`}
+          >
+            {meal}
           </button>
-        </div>
+        ))}
+      </div>
 
-        <div className="macros-section">
-          <div className="macro-card">
-            <div className="macro-header">
-              <span className="macro-icon">🍕</span>
-              <span className="macro-target">Target: 2000</span>
-            </div>
-            <h3>Calories</h3>
-            <div className="macro-value">1650</div>
-            <div className="macro-progress">
-              <div className="progress-bar calories-progress"></div>
-            </div>
-          </div>
-
-          <div className="macro-card">
-            <div className="macro-header">
-              <span className="macro-icon">📈</span>
-              <span className="macro-target">Target: 120g</span>
-            </div>
-            <h3>Protein</h3>
-            <div className="macro-value">95 g</div>
-            <div className="macro-progress">
-              <div className="progress-bar protein-progress"></div>
-            </div>
-          </div>
-
-          <div className="macro-card">
-            <div className="macro-header">
-              <span className="macro-icon">🍎</span>
-              <span className="macro-target">Target: 250g</span>
-            </div>
-            <h3>Carbs</h3>
-            <div className="macro-value">210 g</div>
-            <div className="macro-progress">
-              <div className="progress-bar carbs-progress"></div>
-            </div>
-          </div>
-
-          <div className="macro-card">
-            <div className="macro-header">
-              <span className="macro-icon">☕</span>
-              <span className="macro-target">Target: 65g</span>
-            </div>
-            <h3>Fat</h3>
-            <div className="macro-value">55 g</div>
-            <div className="macro-progress">
-              <div className="progress-bar fat-progress"></div>
-            </div>
+      {/* Display Diet Cards for the current meal options */}
+      <h3>{currentMeal} Options</h3>
+      {Object.keys(categoriesForMeal).map((category) => (
+        <div key={category}>
+          <h4>{category}</h4>
+          <div className="diet-card-container">
+            {categoriesForMeal[category].map((food) => (
+              <DietCard key={food.title} food={food} onSubmit={handleSubmitItem} />
+            ))}
           </div>
         </div>
+      ))}
 
-        <div className="meals-section">
-          <div className="meal-card">
-            <div className="meal-header">
-              <h3>Breakfast</h3>
-              <span className="meal-time">8:00 AM</span>
-            </div>
-            <div className="meal-content">
-              <div className="meal-image breakfast-image"></div>
-              <div className="meal-details">
-                <div className="meal-item">
-                  <span className="item-icon">🥣</span>
-                  <span className="item-name">Oatmeal</span>
-                </div>
-                <div className="meal-item">
-                  <span className="item-icon">🍌</span>
-                  <span className="item-name">Banana</span>
-                </div>
-                <div className="meal-item">
-                  <span className="item-icon">🥜</span>
-                  <span className="item-name">Almonds</span>
-                </div>
-                <button className="view-details-button">View Details</button>
-              </div>
-            </div>
-            <div className="meal-calories">450 cal</div>
-          </div>
-
-          <div className="meal-card">
-            <div className="meal-header">
-              <h3>Lunch</h3>
-              <span className="meal-time">1:00 PM</span>
-            </div>
-            <div className="meal-content">
-              <div className="meal-image lunch-image"></div>
-              <div className="meal-details">
-                <div className="meal-item">
-                  <span className="item-icon">🍗</span>
-                  <span className="item-name">Grilled Chicken</span>
-                </div>
-                <div className="meal-item">
-                  <span className="item-icon">🌱</span>
-                  <span className="item-name">Quinoa</span>
-                </div>
-                <div className="meal-item">
-                  <span className="item-icon">🥦</span>
-                  <span className="item-name">Vegetables</span>
-                </div>
-                <button className="view-details-button">View Details</button>
-              </div>
-            </div>
-            <div className="meal-calories">650 cal</div>
-          </div>
-
-          <div className="meal-card">
-            <div className="meal-header">
-              <h3>Dinner</h3>
-              <span className="meal-time">7:00 PM</span>
-            </div>
-            <div className="meal-content">
-              <div className="meal-image dinner-image"></div>
-              <div className="meal-details">
-                <div className="meal-item">
-                  <span className="item-icon">🐟</span>
-                  <span className="item-name">Salmon</span>
-                </div>
-                <div className="meal-item">
-                  <span className="item-icon">🍚</span>
-                  <span className="item-name">Brown Rice</span>
-                </div>
-                <div className="meal-item">
-                  <span className="item-icon">🥦</span>
-                  <span className="item-name">Broccoli</span>
-                </div>
-                <button className="view-details-button">View Details</button>
-              </div>
-            </div>
-            <div className="meal-calories">550 cal</div>
-          </div>
-        </div>
-
-        <div className="weekly-progress">
-          <h2>Weekly Progress</h2>
-          <div className="week-days">
-            <div className="day">
-              <span className="day-name">Mon</span>
-              <div className="day-bar">
-                <div className="day-progress" style={{ height: "80%" }}></div>
-              </div>
-              <span className="day-value">1698</span>
-            </div>
-            <div className="day">
-              <span className="day-name">Tue</span>
-              <div className="day-bar">
-                <div className="day-progress" style={{ height: "100%" }}></div>
-              </div>
-              <span className="day-value">2397</span>
-            </div>
-            <div className="day">
-              <span className="day-name">Wed</span>
-              <div className="day-bar">
-                <div className="day-progress" style={{ height: "85%" }}></div>
-              </div>
-              <span className="day-value">1899</span>
-            </div>
-            <div className="day">
-              <span className="day-name">Thu</span>
-              <div className="day-bar">
-                <div className="day-progress" style={{ height: "90%" }}></div>
-              </div>
-              <span className="day-value">2149</span>
-            </div>
-            <div className="day">
-              <span className="day-name">Fri</span>
-              <div className="day-bar">
-                <div className="day-progress" style={{ height: "95%" }}></div>
-              </div>
-              <span className="day-value">2227</span>
-            </div>
-            <div className="day">
-              <span className="day-name">Sat</span>
-              <div className="day-bar">
-                <div className="day-progress" style={{ height: "92%" }}></div>
-              </div>
-              <span className="day-value">2202</span>
-            </div>
-            <div className="day">
-              <span className="day-name">Sun</span>
-              <div className="day-bar">
-                <div className="day-progress" style={{ height: "88%" }}></div>
-              </div>
-              <span className="day-value">2095</span>
-            </div>
-          </div>
-        </div>
-      </main>
-
+      {/* Selected Items for the current meal */}
+      <h3>{currentMeal} Selections</h3>
+      {Object.keys(mealPlan[currentMeal] || {}).length > 0 ? (
+        <ul className="selected-items">
+          {Object.entries(mealPlan[currentMeal]).map(([title, { cal, count }]) => (
+            <li key={title} className="selected-item">
+              <span>
+                {title} x {count}: {cal * count} cal
+              </span>
+              <button onClick={() => handleDelete(title)} className="delete-btn">
+                Delete
+              </button>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>No items selected for {currentMeal}.</p>
+      )}
+      <h4>{currentMeal} Total: {getMealCalories(currentMeal)} cal</h4>
+      <hr />
+      <h3>Total Daily Calories: {totalDailyCalories} cal</h3>
     </div>
-  )
-}
+  );
+};
 
-export default DietPlannerPage
-
+export default DietPlanner;
