@@ -8,6 +8,7 @@ import LoginPage from "./component/login/login-page.jsx"
 import Loginf from "./component/LoginForm/Loginf.jsx"
 import Map from "./component/maps/mapsearch.jsx"
 import Chatbox from "./component/ai/Ai1.jsx"
+import SponsorsShowcase from "./component/shop/SponsersShowcase.jsx"
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/diet-planner" element={<Planner />} />
         <Route path="/maps" element={<Map />} />
         <Route path="/ai" element={<Chatbox />} /> {/* Add the new AI route */}
+        <Route path="/shops" element={<SponsorsShowcase />} />
       </Routes>
     </div>
   )

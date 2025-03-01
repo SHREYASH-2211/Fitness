@@ -36,11 +36,11 @@ const Sidebar = () => {
         onClick={(e) => {
         e.preventDefault(); // Prevent default behavior
         window.location.href = "https://hwffvj.csb.app/"; // Redirect in same tab
-      }}
->
-  <span className="nav-icon yoga-icon"></span>
-  <span className="nav-text">Yoga & Gym</span>
-</Link>
+        }}
+        >
+         <span className="nav-icon yoga-icon"></span>
+         <span className="nav-text">Yoga & Gym</span>
+        </Link>
 
 
 
