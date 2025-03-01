@@ -112,3 +112,20 @@ h2, h3, h4 {
   background: darkred;
   transform: scale(1.1);
 }
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  padding-left:290px;
+  margin: 20px 0;
+}
+
+.search-input {
+  width: 50%; /* Adjust width as needed */
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  text-align: center;
+}
+

@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import DietCard from "./diet-card.jsx"; 
 import "./diet-planner.css";
+import Sidebar from "../sidebar/sidebar.jsx";
 
 const DietPlanner = () => {
   const meals = ["Breakfast", "Lunch", "Dinner", "Snacks"];
   const [currentMeal, setCurrentMeal] = useState("Breakfast");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
 
   // mealPlan: For each meal, store items as an object mapping food title to { cal, count }
   const [mealPlan, setMealPlan] = useState({
@@ -61,12 +64,48 @@ const DietPlanner = () => {
             { title: "Tea", calories: 30, image: "https://via.placeholder.com/150?text=Tea" },
             { title: "Coffee", calories: 50, image: "https://via.placeholder.com/150?text=Coffee" },
             { title: "Jalebi", calories: 180, image: "https://via.placeholder.com/150?text=Jalebi" }
-          
           ]
-        }
+        };
       default:
         return {};
     }
+  };
+
+  // Function to get all food items across all meals
+  const getAllFoodItems = () => {
+    const allItems = [];
+    
+    meals.forEach(meal => {
+      const categories = getCategoriesForMeal(meal);
+      Object.values(categories).forEach(foodArray => {
+        foodArray.forEach(food => {
+          allItems.push({
+            ...food,
+            mealType: meal
+          });
+        });
+      });
+    });
+    
+    return allItems;
+  };
+
+  // Handle search input change
+  const handleSearchChange = (e) => {
+    const query = e.target.value.toLowerCase();
+    setSearchQuery(query);
+    
+    if (query.trim() === '') {
+      setSearchResults([]);
+      return;
+    }
+    
+    const allItems = getAllFoodItems();
+    const filtered = allItems.filter(item => 
+      item.title.toLowerCase().includes(query)
+    );
+    
+    setSearchResults(filtered);
   };
 
   // Get the appropriate categories for the current meal
@@ -85,6 +124,39 @@ const DietPlanner = () => {
         }
       };
     });
+  };
+
+  // Handle adding search result to current meal
+  const handleAddSearchResult = (food, quantity) => {
+    setMealPlan((prev) => {
+      const currentMealPlan = prev[currentMeal] || {};
+      const existingCount = currentMealPlan[food.title]?.count || 0;
+      return {
+        ...prev,
+        [currentMeal]: {
+          ...currentMealPlan,
+          [food.title]: { cal: food.calories, count: existingCount + quantity }
+        }
+      };
+    });
+    
+    // Clear search after adding item
+    setSearchQuery("");
+    setSearchResults([]);
+  };
+
+  // Handle incrementing/decrementing search result quantity
+  const handleQuantityChange = (foodId, increment) => {
+    const quantityElement = document.getElementById(`quantity-${foodId}`);
+    let currentValue = parseInt(quantityElement.innerText);
+    
+    if (increment) {
+      currentValue++;
+    } else {
+      currentValue = Math.max(0, currentValue - 1);
+    }
+    
+    quantityElement.innerText = currentValue;
   };
 
   // Delete a food item completely from the current meal
@@ -109,8 +181,22 @@ const DietPlanner = () => {
   );
 
   return (
+    <>
+    <Sidebar />
     <div className="diet-planner">
+      
       <h2>Diet Planner</h2>
+
+      {/* Search Bar */}
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Search for food items..."
+          value={searchQuery}
+          onChange={handleSearchChange}
+          className="search-input"
+        />
+      </div>
 
       {/* Meal Selection */}
       <div className="meal-selector">
@@ -124,6 +210,48 @@ const DietPlanner = () => {
           </button>
         ))}
       </div>
+
+      {/* Search Results */}
+      {searchResults.length > 0 && (
+        <div className="search-results">
+          <h3>Search Results</h3>
+          <div className="diet-card-container">
+            {searchResults.map((food, index) => (
+              <div key={`${food.title}-${index}`} className="food-card">
+                <img src={food.image} alt={food.title} className="food-image" />
+                <h4 className="food-title">{food.title}</h4>
+                <p className="food-calories">{food.calories} cal</p>
+                <div className="counter">
+                  <button 
+                    className="counter-btn" 
+                    onClick={() => handleQuantityChange(`search-${index}`, false)}
+                  >
+                    -
+                  </button>
+                  <span id={`quantity-search-${index}`} className="counter-value">0</span>
+                  <button 
+                    className="counter-btn" 
+                    onClick={() => handleQuantityChange(`search-${index}`, true)}
+                  >
+                    +
+                  </button>
+                </div>
+                <button 
+                  className="add-btn"
+                  onClick={() => {
+                    const quantity = parseInt(document.getElementById(`quantity-search-${index}`).innerText);
+                    if (quantity > 0) {
+                      handleAddSearchResult(food, quantity);
+                    }
+                  }}
+                >
+                  Add to {currentMeal}
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Display Diet Cards for the current meal options */}
       <h3>{currentMeal} Options</h3>
@@ -160,6 +288,7 @@ const DietPlanner = () => {
       <hr />
       <h3>Total Daily Calories: {totalDailyCalories} cal</h3>
     </div>
+    </>
   );
 };
 
