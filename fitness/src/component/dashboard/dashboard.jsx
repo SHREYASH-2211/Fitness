@@ -26,7 +26,7 @@ const Dashboard = () => {
         </header>
 
         <div className="welcome-section">
-          <h1>Welcome back, Aayush!</h1>
+          <h1>Welcome back, Shreyash!</h1>
           <p className="subtitle">Here's your health overview for today</p>
         </div>
 
