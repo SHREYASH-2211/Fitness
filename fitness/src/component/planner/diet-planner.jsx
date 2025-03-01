@@ -188,13 +188,13 @@ const DietPlanner = () => {
       <h2>Diet Planner</h2>
 
       {/* Search Bar */}
-      <div className="search-container">
+      <div className="search-container1">
         <input
           type="text"
           placeholder="Search for food items..."
           value={searchQuery}
           onChange={handleSearchChange}
-          className="search-input"
+          className="search-input1"
         />
       </div>
 

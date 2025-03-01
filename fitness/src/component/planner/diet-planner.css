@@ -113,19 +113,23 @@ h2, h3, h4 {
   transform: scale(1.1);
 }
 
-.search-container {
+.search-container1 {
   display: flex;
   justify-content: center;
-  padding-left:290px;
+  align-items: center;
+  
   margin: 20px 0;
+  
 }
 
-.search-input {
+.search-input1 {
   width: 50%; /* Adjust width as needed */
   padding: 10px;
   border-radius: 6px;
   border: none;
   font-size: 1rem;
   text-align: center;
+  background: transparent;
+  color:white
 }
 
