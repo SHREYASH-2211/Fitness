@@ -23,14 +23,14 @@ const DietPlanner = () => {
       case "Breakfast":
         return {
           "Breakfast Items": [
-            { title: "Poha", calories: 200, image: "https://via.placeholder.com/150?text=Poha" },
-            { title: "Idli", calories: 40, image: "https://via.placeholder.com/150?text=Idli" },
-            { title: "Dosa", calories: 150, image: "https://via.placeholder.com/150?text=Dosa" },
-            { title: "Upma", calories: 250, image: "https://via.placeholder.com/150?text=Upma" },
-            { title: "Paratha", calories: 200, image: "https://via.placeholder.com/150?text=Paratha" },
-            { title: "Tea", calories: 30, image: "https://via.placeholder.com/150?text=Tea" },
-            { title: "Coffee", calories: 50, image: "https://via.placeholder.com/150?text=Coffee" },
-            { title: "Jalebi", calories: 180, image: "https://via.placeholder.com/150?text=Jalebi" }
+            { title: "Poha", calories: 200, image: "./src/images/poha.webp" },
+            { title: "Idli", calories: 40, image: "./src/images/idli.webp" },
+            { title: "Dosa", calories: 150, image: "./src/images/dosa.webp" },
+            { title: "Upma", calories: 250, image: "./src/images/upma.webp" },
+            { title: "Paratha", calories: 200, image: "./src/images/paratha.webp" },
+            { title: "Tea", calories: 30, image: "src/images/tea.webp" },
+            { title: "Coffee", calories: 50, image: "src/images/coffee.webp" },
+            { title: "Jalebi", calories: 180, image: "src/images/jalebi.webp" }
           ]
         };
       case "Lunch":
