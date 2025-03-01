@@ -15,9 +15,9 @@ const Sidebar = () => {
           <span className="nav-text">Home</span>
         </Link>
 
-        <Link to="/disease" className="nav-item">
+        <Link to="/ai" className="nav-item">
         <span className="nav-icon disease-icon"></span> {/* Update class name */}
-        <span className="nav-text">Disease Prediction</span>
+        <span className="nav-text">Ai </span>
         </Link>
 
         <Link to="/community" className="nav-item">

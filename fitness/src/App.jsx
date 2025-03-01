@@ -12,6 +12,7 @@ import Loginf from "./component/LoginForm/Loginf.jsx";
 
 
 import Map from "./component/maps/mapsearch.jsx";
+// import Ai from "./component/ai/ai.jsx";
 // import Yoga from "./component/yoga/yogapath.jsx";
 // Import other page components
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/find-classes" element={<Classes />} />
         <Route path="/diet-planner" element={<Planner />} />
         <Route path="/maps" element={<Map />} />
+        {/* <Route path="/ai" element={<Ai />} /> */}
       </Routes>
       
     </div>

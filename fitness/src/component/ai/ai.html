@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness360 AI Assistant</title>
+    <style>
+        /* Color palette */
+        :root {
+            --dark-blue: #0a0a43;    /* Deep navy blue */
+            --mid-blue: #102a53;     /* Medium deep blue */
+            --teal: #2c5754;         /* Deep teal */
+            --light-teal: #3a7a76;   /* Lighter teal variant */
+            --text-light: #ffffff;   /* White text */
+            --text-dark: #0a0a43;    /* Dark text (same as dark blue) */
+            --accent-color: #ffd700; /* Gold accent */
+            --card-bg: rgba(255, 255, 255, 0.1);    /* Semi-transparent white */
+            --card-hover: rgba(255, 255, 255, 0.15); /* Slightly more opaque white */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--dark-blue), var(--mid-blue));
+            color: var(--text-light);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--card-bg);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-blue);
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .logo-text h1 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .logo-text p {
+            font-size: 14px;
+            color: var(--accent-color);
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--card-bg);
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-size: 14px;
+        }
+
+        .contact-info i {
+            color: var(--accent-color);
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .feature-heading {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            background-color: var(--card-hover);
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .chatbot-container {
+            background-color: var(--teal);
+            border-radius: 15px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 600px;
+        }
+
+        .chatbot-header {
+            background-color: var(--dark-blue);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chatbot-header h2 {
+            font-size: 18px;
+            flex-grow: 1;
+        }
+
+        .chatbot-status {
+            width: 10px;
+            height: 10px;
+            background-color: #4caf50;
+            border-radius: 50%;
+        }
+
+        .chat-messages {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 12px 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .bot-message {
+            align-self: flex-start;
+            background-color: var(--light-teal);
+        }
+
+        .user-message {
+            align-self: flex-end;
+            background-color: var(--mid-blue);
+        }
+
+        .chat-input {
+            padding: 15px 20px;
+            background-color: var(--dark-blue);
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input input {
+            flex-grow: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+        }
+
+        .chat-input input:focus {
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .send-button {
+            background-color: var(--accent-color);
+            color: var(--dark-blue);
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .send-button:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+        .disclaimer {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .disclaimer strong {
+            color: var(--accent-color);
+        }
+
+        /* Typing indicator styles */
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+        }
+        
+        .typing-indicator span {
+            height: 5px;
+            width: 5px;
+            margin: 0 1px;
+            background-color: #fff;
+            display: block;
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+        
+        .typing-indicator span:nth-child(1) {
+            animation: pulse 1s infinite;
+        }
+        
+        .typing-indicator span:nth-child(2) {
+            animation: pulse 1s infinite 0.2s;
+        }
+        
+        .typing-indicator span:nth-child(3) {
+            animation: pulse 1s infinite 0.4s;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.4; }
+            50% { opacity: 1; }
+            100% { opacity: 0.4; }
+        }
+
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .contact-info {
+                align-self: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">FT</div>
+                <div class="logo-text">
+                    <h1>Wellness360</h1>
+                    <p>Your All-in-One Health & Fitness Companion</p>
+                </div>
+            </div>
+            <div class="contact-info">
+                <i class="fas fa-phone-alt"></i>
+                <span>Need help? Call 1234567891</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="features">
+                <h2 class="feature-heading">Meet Your AI Health Assistant</h2>
+                <p>Your personal AI-powered health companion ready to assist with all your fitness and wellness needs.</p>
+                
+                <div class="feature-list">
+                    <div class="feature-card">
+                        <h3>Health Tracking</h3>
+                        <p>Track all aspects of your health and wellness journey in one place.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Calorie Counter</h3>
+                        <p>Easily monitor your daily calorie intake and nutritional balance.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Fitness Centers</h3>
+                        <p>Find nearby gyms, yoga studios, and health centers.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Yoga Pose Detection</h3>
+                        <p>Get real-time feedback on your yoga poses and form.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Workout Videos</h3>
+                        <p>Access personalized workout videos and tutorials.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Community</h3>
+                        <p>Connect with like-minded individuals on their fitness journey.</p>
+                    </div>
+                </div>
+
+                <div class="disclaimer">
+                    <strong>Important:</strong> Wellness360 is designed to provide general health and fitness information. It is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
+                </div>
+            </div>
+
+            <div class="chatbot-container">
+                <div class="chatbot-header">
+                    <div class="chatbot-status"></div>
+                    <h2>Wellness360 AI Assistant</h2>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Messages will be added here dynamically -->
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="userInput" placeholder="Ask me about fitness, nutrition, workouts..." />
+                    <button class="send-button" id="sendButton">Send</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatMessages = document.getElementById('chatMessages');
+            const userInput = document.getElementById('userInput');
+            const sendButton = document.getElementById('sendButton');
+            
+            // Generate a random session ID for this user
+            const sessionId = 'session_' + Math.random().toString(36).substring(2, 15);
+            let isFirstMessage = true;
+
+            // Function to add a message to the chat
+            function addMessage(text, isUser) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = isUser ? 'message user-message' : 'message bot-message';
+                messageDiv.textContent = text;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            // Function to get a typing indicator
+            function addTypingIndicator() {
+                const typingDiv = document.createElement('div');
+                typingDiv.className = 'message bot-message typing-indicator';
+                typingDiv.innerHTML = 'Typing<span>.</span><span>.</span><span>.</span>';
+                typingDiv.id = 'typing-indicator';
+                chatMessages.appendChild(typingDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            // Function to remove typing indicator
+            function removeTypingIndicator() {
+                const typingIndicator = document.getElementById('typing-indicator');
+                if (typingIndicator) {
+                    typingIndicator.remove();
+                }
+            }
+
+            // Function to send message to backend API
+            async function sendMessageToAPI(message) {
+                try {
+                    addTypingIndicator();
+                    
+                    // Use the full URL to the backend
+                    const response = await fetch('http://localhost:3000/api/chat', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            message: message,
+                            sessionId: sessionId
+                        }),
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+
+                    const data = await response.json();
+                    removeTypingIndicator();
+                    addMessage(data.response, false);
+                } catch (error) {
+                    console.error('Error:', error);
+                    removeTypingIndicator();
+                    
+                    // Fallback response if API fails
+                    addMessage("Sorry, I'm having trouble connecting to the server. Please try again later.", false);
+                }
+            }
+
+            // Initialize chat by getting first message
+            if (isFirstMessage) {
+                sendMessageToAPI("Hello");
+                isFirstMessage = false;
+            }
+
+            // Event listeners
+            sendButton.addEventListener('click', function() {
+                const text = userInput.value.trim();
+                if (text) {
+                    addMessage(text, true);
+                    userInput.value = '';
+                    sendMessageToAPI(text);
+                }
+            });
+
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendButton.click();
+                }
+            });
+
+            // Focus on input when page loads
+            userInput.focus();
+        });
+    </script>
+</body>
+</html>
