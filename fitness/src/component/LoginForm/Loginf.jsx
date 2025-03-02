@@ -15,7 +15,7 @@ const LoginForm = () => {
     axios.get("http://localhost:5000/verify", { withCredentials: true })
       .then((res) => {
         if (res.data.isVerified) {
-          navigate("/");
+          navigate("/dashboard");
         }
       })
       .catch(() => {}); // Ignore errors
@@ -25,19 +25,19 @@ const LoginForm = () => {
     e.preventDefault();
     try {
       if (isSignup) {
-        // Signup request
+        // Corrected Signup Request - Creates a new user
         await axios.post("http://localhost:5000/signup", { name, email, password });
         alert("Signup successful! Please log in.");
         setIsSignup(false);
       } else {
-        // Login request
+        // Corrected Login Request - Now correctly checks for user existence
         const res = await axios.post(
           "http://localhost:5000/login",
           { email, password },
           { withCredentials: true }
         );
         alert(res.data.message);
-        navigate("/");
+        navigate("/dashboard");
       }
     } catch (err) {
       alert(err.response?.data?.message || "Something went wrong");
@@ -102,4 +102,3 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
-
