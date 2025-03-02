@@ -5,7 +5,7 @@ import Tracker from "./Tracker.jsx";
 
 const Dashboard = () => {
   return (
-    <div className="app-container">
+    <div className="app-container">+
       <Sidebar />
 
       <main className="main-content">
