@@ -174,6 +174,18 @@ const FindClassesPage = () => {
           <p>Our AI assistant is here 24/7 to help you achieve your wellness goals.</p>
           <button className="chat-button">Chat with AI</button>
         </div>
+        <footer className="footer">
+  <p>&copy; 2024 Wellness360 Dashboard. All rights reserved.</p>
+  <p>Contact us: <a href="tel:+1234567890">+1 234 567 890</a> | Email: <a href="mailto:support@wellness360.com">support@wellness360.com</a></p>
+  <div className="social-links">
+    <a href="https://www.facebook.com/wellness360" target="_blank" rel="noopener noreferrer">Facebook</a> | 
+    <a href="https://www.twitter.com/wellness360" target="_blank" rel="noopener noreferrer">Twitter</a> | 
+    <a href="https://www.instagram.com/wellness360" target="_blank" rel="noopener noreferrer">Instagram</a> | 
+    <a href="https://www.linkedin.com/company/wellness360" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+  <p>Privacy Policy | Terms & Conditions</p>
+</footer>
+
       </main>
 
       

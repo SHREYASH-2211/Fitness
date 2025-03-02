@@ -9,7 +9,7 @@ const MapSearch = () => {
   const [searchTerm, setSearchTerm] = useState("")
   const [filteredStudios, setFilteredStudios] = useState([])
   const [randomFacts, setRandomFacts] = useState([])
-  const [darkMode, setDarkMode] = useState(false)
+  // const [darkMode, setDarkMode] = useState(false)
 
   const yogaStudios = [
     {
@@ -100,12 +100,12 @@ const MapSearch = () => {
   return (
     <>
     <Sidebar />
-    <div className={`map-search-container ${darkMode ? "dark-mode" : ""}`}>
-      <div className="top-bar">
+    <div className="map-search-container">
+      {/* <div className="top-bar">
         <button className="toggle-mode" onClick={() => setDarkMode(!darkMode)}>
           {darkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}
         </button>
-      </div>
+      </div> */}
 
       <div className="search-box">
         <div className="title">
@@ -181,6 +181,18 @@ const MapSearch = () => {
             </div>
           ))}
         </div>
+        <footer className="footer">
+  <p>&copy; 2024 Wellness360 Dashboard. All rights reserved.</p>
+  <p>Contact us: <a href="tel:+1234567890">+1 234 567 890</a> | Email: <a href="mailto:support@wellness360.com">support@wellness360.com</a></p>
+  <div className="social-links">
+    <a href="https://www.facebook.com/wellness360" target="_blank" rel="noopener noreferrer">Facebook</a> | 
+    <a href="https://www.twitter.com/wellness360" target="_blank" rel="noopener noreferrer">Twitter</a> | 
+    <a href="https://www.instagram.com/wellness360" target="_blank" rel="noopener noreferrer">Instagram</a> | 
+    <a href="https://www.linkedin.com/company/wellness360" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+  <p>Privacy Policy | Terms & Conditions</p>
+</footer>
+
       </div>
     </div>
     </>

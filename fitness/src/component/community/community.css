@@ -62,7 +62,7 @@ body {
   cursor: pointer;
 }
 
-/* Modified: Changed to display 3 cards per row instead of auto-fill */
+/* Modified: Changed to display 3 cards per row with proper spacing */
 .posts-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -73,6 +73,8 @@ body {
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 0.75rem;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .post-header {
@@ -122,37 +124,31 @@ body {
   font-size: 0.9rem;
 }
 
+/* Adjusted to make images fit properly within the container */
 .post-image {
   width: 100%;
-  height: 180px;
+  height: 200px; /* Adjust height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Ensures no overflow */
   border-radius: 0.5rem;
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 1rem;
 }
+
+.post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: fit; /* Ensures the image fully fills the container */
+}
+
 
 .yoga-image {
-  background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.10-fRUSRDzMirr89SXLmy41qWadhDC9YN.png");
-}
-
-.lemon-water-image {
-  background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.10-fRUSRDzMirr89SXLmy41qWadhDC9YN.png");
-}
-
-.meditation-image {
-  background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.10-fRUSRDzMirr89SXLmy41qWadhDC9YN.png");
-}
-
-.yoga-practice-image {
-  background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.10-fRUSRDzMirr89SXLmy41qWadhDC9YN.png");
-}
-
-.healthy-snacks-image {
-  background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.10-fRUSRDzMirr89SXLmy41qWadhDC9YN.png");
-}
-
-.community-workout-image {
-  background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-28%20at%2019.52.10-fRUSRDzMirr89SXLmy41qWadhDC9YN.png");
+  width: 100%;
+  height: 120px;
+  object-fit: contain; /* Changed from 'cover' to 'contain' */
+  background-size: contain; /* Ensures the background image fits */
+  background-position: center;
+  border-radius: 0.5rem;
 }
 
 .post-actions {
@@ -201,22 +197,22 @@ body {
 /* Updated responsive breakpoints for 3-column layout */
 @media (max-width: 1200px) {
   .posts-container {
-      grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
   .community-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
   }
-
+  
   .new-post-button {
-      align-self: flex-end;
+    align-self: flex-end;
   }
-
+  
   .posts-container {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 }

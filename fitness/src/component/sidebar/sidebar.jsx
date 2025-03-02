@@ -10,7 +10,7 @@ const Sidebar = () => {
       </div>
 
       <nav className="sidebar-nav">
-        <Link to="/" className="nav-item">
+        <Link to="/dashboard" className="nav-item">
           <span className="nav-icon home-icon"></span>
           <span className="nav-text">Home</span>
         </Link>
@@ -18,16 +18,6 @@ const Sidebar = () => {
         <Link to="/ai" className="nav-item">
         <span className="nav-icon disease-icon"></span> {/* Update class name */}
         <span className="nav-text">Ai </span>
-        </Link>
-
-        <Link to="/community" className="nav-item">
-          <span className="nav-icon community-icon"></span>
-          <span className="nav-text">Community</span>
-        </Link>
-
-        <Link to="/diet-planner" className="nav-item">
-          <span className="nav-icon diet-icon"></span>
-          <span className="nav-text">Diet Planner</span>
         </Link>
 
         <Link
@@ -42,7 +32,15 @@ const Sidebar = () => {
          <span className="nav-text">Yoga & Gym</span>
         </Link>
 
+        <Link to="/community" className="nav-item">
+          <span className="nav-icon community-icon"></span>
+          <span className="nav-text">Community</span>
+        </Link>
 
+        <Link to="/diet-planner" className="nav-item">
+          <span className="nav-icon diet-icon"></span>
+          <span className="nav-text">Diet Planner</span>
+        </Link>
 
         <Link to="/maps" className="nav-item">
           <span className="nav-icon maps-icon"></span>

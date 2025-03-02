@@ -1,14 +1,7 @@
 import "./dashboard.css"
 import Sidebar from "../sidebar/sidebar.jsx"
-// import React from "react";
-// import Nav from "./Nav";
-// import Cards from "./Cards";
-// import ActivityCalendar from "./ActivityCalender";
-// import ActivitiesList from "./ActivityList";
 import Graphs from "./Graph.jsx";
-// import "../Styles/Dashboard.css";
-// import "./ChatBot"
-// import ChatBot from "./ChatBot";
+import Tracker from "./Tracker.jsx";
 
 const Dashboard = () => {
   return (
@@ -17,9 +10,6 @@ const Dashboard = () => {
 
       <main className="main-content">
         <header className="header">
-          {/* <div className="search-container">
-            <input type="text" placeholder="Search..." className="search-input" />
-          </div> */}
           <div className="notifications">
             <span className="notification-icon">🔔</span>
           </div>
@@ -76,14 +66,14 @@ const Dashboard = () => {
           </div>
         </div>
 
-
         <Graphs/>
+        <Tracker/>
 
         <div className="dashboard-grid">
           <div className="schedule-section">
             <div className="section-header">
               <h2>Today's Schedule</h2>
-              <span className="date">March 14, 2024</span>
+              <span className="date">March 2, 2024</span>
             </div>
 
             <div className="timeline">
@@ -135,17 +125,17 @@ const Dashboard = () => {
 
           <div className="insights-section">
             <h2>AI Insights</h2>
-
+            <br />
             <div className="insight-card">
               <h3>Hydration Alert</h3>
               <p>You're slightly below your daily water goal. Consider drinking a glass of water now.</p>
             </div>
-
+            <br />
             <div className="insight-card">
               <h3>Sleep Pattern</h3>
               <p>Your sleep quality has improved by 15% this week. Keep maintaining your bedtime routine!</p>
             </div>
-
+            <br />
             <div className="insight-card">
               <h3>Workout Suggestion</h3>
               <p>Based on your goals, we recommend a 30-minute strength training session today.</p>
@@ -155,26 +145,22 @@ const Dashboard = () => {
 
         <div className="achievements-section">
           <h2>Achievement Badges</h2>
-
           <div className="badges-container">
             <div className="badge-card">
               <div className="badge-icon fitness-badge">👑</div>
               <h3>Fitness Royalty</h3>
               <p>Completed 100 workouts</p>
             </div>
-
             <div className="badge-card">
               <div className="badge-icon power-badge">⚡</div>
               <h3>Power Warrior</h3>
               <p>Hit personal records 10 times</p>
             </div>
-
             <div className="badge-card">
               <div className="badge-icon goal-badge">🎯</div>
               <h3>Goal Crusher</h3>
               <p>Achieved all monthly targets</p>
             </div>
-
             <div className="badge-card">
               <div className="badge-icon streak-badge">🔥</div>
               <h3>Streak Master</h3>
@@ -182,6 +168,19 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
+
+        <footer className="footer">
+  <p>&copy; 2024 Wellness360 Dashboard. All rights reserved.</p>
+  <p>Contact us: <a href="tel:+1234567890">+1 234 567 890</a> | Email: <a href="mailto:support@wellness360.com">support@wellness360.com</a></p>
+  <div className="social-links">
+    <a href="https://www.facebook.com/wellness360" target="_blank" rel="noopener noreferrer">Facebook</a> | 
+    <a href="https://www.twitter.com/wellness360" target="_blank" rel="noopener noreferrer">Twitter</a> | 
+    <a href="https://www.instagram.com/wellness360" target="_blank" rel="noopener noreferrer">Instagram</a> | 
+    <a href="https://www.linkedin.com/company/wellness360" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+  <p>Privacy Policy | Terms & Conditions</p>
+</footer>
+
       </main>
 
       
@@ -189,4 +188,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Dashboard;

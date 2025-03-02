@@ -31,7 +31,7 @@ body {
 .diet-planner {
   /* background-color: var(--mid-blue); */
   padding: 30px;
-  padding-left: 100px;
+  padding-left: 230px;
   border-radius: 12px;
   /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); */
   margin: 30px auto;
@@ -39,6 +39,7 @@ body {
   font-family: 'Inter', sans-serif;
   text-align: center;
   width: 1000vh;
+
 }
 
 .meal-selector {

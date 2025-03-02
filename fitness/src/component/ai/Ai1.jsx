@@ -105,6 +105,9 @@ const Ai1 = () => {
                             <button className="send-button1" onClick={() => sendMessageToAPI(userInput)}>Send</button>
                         </div>
                     </div>
+                    <footer className="footer">
+                    <p>&copy; 2024 Wellness360 . All rights reserved.</p>
+                    </footer>
                 </main>
             </div>
         </>
