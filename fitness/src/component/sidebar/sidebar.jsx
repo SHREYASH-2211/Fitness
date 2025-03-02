@@ -6,7 +6,9 @@ const Sidebar = () => {
     <aside className="sidebar">
       <div className="logo-container">
         <div className="logo-icon"></div>
-        <h1 className="logo-text">Wellness360</h1>
+        <h1 className="logo-text">
+          {/* <span><img className="logo-icon" src="./src/images/logo.jpeg"  /></span> */}
+          <span>Wellness360</span></h1>
       </div>
 
       <nav className="sidebar-nav">
