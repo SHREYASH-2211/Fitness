@@ -14,7 +14,7 @@ function App() {
     <div className="app-container">
       <Routes>
         {/* <Route path="/login" element={<LoginPage />} /> */}
-        <Route path="/login" element={<Loginf />} />
+        <Route path="/" element={<Loginf />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/community" element={<CommunityPage />} />
         <Route path="/meditation" element={<Meditation />} />
