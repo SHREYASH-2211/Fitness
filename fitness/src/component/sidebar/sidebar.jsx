@@ -12,7 +12,7 @@ const Sidebar = () => {
       </div>
 
       <nav className="sidebar-nav">
-        <Link to="/dashboard" className="nav-item">
+        <Link to="/" className="nav-item">
           <span className="nav-icon home-icon"></span>
           <span className="nav-text">Home</span>
         </Link>
