@@ -23,47 +23,47 @@ const DietPlanner = () => {
       case "Breakfast":
         return {
           "Breakfast Items": [
-            { title: "Poha", calories: 200, image: "./src/images/poha.webp" },
-            { title: "Idli", calories: 40, image: "./src/images/idli.webp" },
-            { title: "Dosa", calories: 150, image: "./src/images/dosa.webp" },
-            { title: "Upma", calories: 250, image: "./src/images/upma.webp" },
-            { title: "Paratha", calories: 200, image: "./src/images/paratha.webp" },
-            { title: "Tea", calories: 30, image: "src/images/tea.webp" },
-            { title: "Coffee", calories: 50, image: "src/images/coffee.webp" },
-            { title: "Jalebi", calories: 180, image: "src/images/jalebi.webp" }
+            { title: "Poha", calories: 200, image: "https://media.istockphoto.com/id/1093261264/photo/aloo-kanda-poha-or-tarri-pohe-with-spicy-chana-masala-curry-selective-focus.jpg?s=2048x2048&w=is&k=20&c=xKoCqqLZTditwRvnnFH5h3Qkc2A51CfGciSUzDOajco=" },
+            { title: "Idli", calories: 40, image: "https://media.istockphoto.com/id/182491284/photo/idli-sambhar-and-chutney-south-indian-dish-on-banana-leaf.jpg?s=2048x2048&w=is&k=20&c=BrMfyUIkRZKH0Gg6bW2CiyxHArNzMHIL0SBqzmLnfe4=" },
+            { title: "Dosa", calories: 150, image: "https://images.unsplash.com/photo-1708146464361-5c5ce4f9abb6?q=80&w=2475&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+            { title: "Upma", calories: 250, image: "https://media.istockphoto.com/id/1488737992/photo/upma-recipe-suji-ka-upma-rava-upma-with-red-and-coconut-chutney.jpg?s=2048x2048&w=is&k=20&c=DPxyBb3cAyA8UOKNS37OuNIxykrFLS04Y4cGzdInIbA=" },
+            { title: "Paratha", calories: 200, image: "https://media.istockphoto.com/id/173902636/photo/paratha-indian-flatbread.jpg?s=2048x2048&w=is&k=20&c=ZEg0i-CufxFja3NwrtEqJGrh0zLOMtdj0kydZbd-g04=" },
+            { title: "Tea", calories: 30, image: "https://media.istockphoto.com/id/1336601313/photo/top-view-of-indian-herbal-masala-chai-or-traditional-beverage-tea-with-milk-and-spices-kerala.jpg?s=1024x1024&w=is&k=20&c=6VGOiN8H6F1uhTwMxUNLXnUqmd8viaLwChR_JNEMYoI=" },
+            { title: "Coffee", calories: 50, image: "https://plus.unsplash.com/premium_photo-1675435644687-562e8042b9db?q=80&w=3449&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+            { title: "Jalebi", calories: 180, image: "https://media.istockphoto.com/id/1406503800/photo/special-indian-sweet-jalebi-or-jilabi-jeelebi-and-jilapi-served-in-dish-isolated-on-dark.jpg?s=2048x2048&w=is&k=20&c=qX8IrqM5aBxRzYxnveM7xnSfR7UNLnP1d3hUHOr1NA0=" }
           ]
         };
       case "Lunch":
       case "Dinner":
         return {
           "Main Course": [
-            { title: "Roti", calories: 100, image: "./src/images/roti.webp" },
-            { title: "Chapati", calories: 90, image: "./src/images/chapati.webp" },
-            { title: "Dal", calories: 150, image: "./src/images/dal.webp" },
-            { title: "Rice", calories: 130, image: "./src/images/rice.webp" },
-            { title: "Paneer Bhurji", calories: 200, image: "./src/images/paneer.webp" },
-            { title: "Aloo Gobi", calories: 180, image: "./src/images/aloo.webp" },
-            { title: "Bhindi Masala", calories: 150, image: "./src/images/bhindi.webp" },
-            { title: "Baingan Bharta", calories: 170, image: "./src/images/baigan.webp" },
-            { title: "Palak Paneer", calories: 220, image: "./src/images/palak.webp" }
+            { title: "Roti", calories: 100, image: "https://plus.unsplash.com/premium_photo-1675382377369-c8f4cd69cfee?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cm90aXxlbnwwfHwwfHx8MA%3D%3D" },
+            { title: "Chapati", calories: 90, image: "https://plus.unsplash.com/premium_photo-1675382377369-c8f4cd69cfee?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cm90aXxlbnwwfHwwfHx8MA%3D%3D" },
+            { title: "Dal", calories: 150, image: "https://images.unsplash.com/photo-1626500154744-e4b394ffea16?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+            { title: "Rice", calories: 130, image: "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+            { title: "Paneer Bhurji", calories: 200, image: "https://media.istockphoto.com/id/1292628415/photo/paneer-bhurji-is-a-famous-indian-dish-served-over-a-rustic-wooden-background-selective-focus.webp?a=1&b=1&s=612x612&w=0&k=20&c=MfzEuPTnLZMlSd5vk1cAL8mFJ0NX4FvqFfWTEDYnUM4=" },
+            { title: "Aloo Gobi", calories: 180, image: "https://media.istockphoto.com/id/187509509/photo/gobi-aloo-indian-curry-dish.jpg?s=2048x2048&w=is&k=20&c=Ht5HObPLMB87zG9sqX_qIn8qFxjXWUUetPlW8KvKT-4=" },
+            { title: "Bhindi Masala", calories: 150, image: "https://media.istockphoto.com/id/516316282/photo/indian-masala-fried-bhindi-or-ladyfinger-curry.jpg?s=2048x2048&w=is&k=20&c=sNRLk9CRTMilOcr4fAfAXs4OhjGppcUAWwn8s-Wj2Ms=" },
+            { title: "Baingan Bharta", calories: 170, image: "https://media.istockphoto.com/id/2202290924/photo/smoky-roasted-baingan-bharta.jpg?s=2048x2048&w=is&k=20&c=gwrPghA-h2DKDiP8QQZDehrEvQ1qIzGtGTGc_hgevyI=" },
+            { title: "Palak Paneer", calories: 220, image: "https://images.unsplash.com/photo-1589647363585-f4a7d3877b10?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFsYWslMjBwYW5lZXJ8ZW58MHx8MHx8fDA%3D" }
           ],
           "Desserts": [
-            { title: "Gulab Jamun", calories: 150, image: "./src/images/gulab.webp" },
-            { title: "Rasgulla", calories: 100, image: "./src/images/ras.webp" },
-            { title: "Ice Cream", calories: 250, image: "./src/images/ice.webp" }
+            { title: "Gulab Jamun", calories: 150, image: "https://images.unsplash.com/photo-1646578515903-67873a5398f9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z3VsYWIlMjBqYW11bnxlbnwwfHwwfHx8MA%3D%3D" },
+            { title: "Rasgulla", calories: 100, image: "https://images.unsplash.com/photo-1714799263412-2e0c1f875959?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFzZ3VsbGF8ZW58MHx8MHx8fDA%3D" },
+            { title: "Ice Cream", calories: 250, image: "https://plus.unsplash.com/premium_photo-1675279010969-e85bfbd402dc?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aWNlY3JlYW18ZW58MHx8MHx8fDA%3D" }
           ]
         };
       case "Snacks":
         return {
           "Snack Items": [
-            { title: "Samosa", calories: 250, image: "./src/images/samosa.webp" },
-            { title: "Bhel Puri", calories: 150, image: "./src/images/bhel.webp" },
-            { title: "Kachori", calories: 180, image: "./src/images/kachori.webp" },
-            { title: "Pakora", calories: 100, image: "./src/images/pakora.webp" },
-            { title: "Dhokla", calories: 120, image: "./src/images/dhokla.webp" },
-            { title: "Tea", calories: 30, image: "./src/images/tea.webp" },
-            { title: "Coffee", calories: 50, image: "./src/images/coffee.webp" },
-            { title: "Jalebi", calories: 180, image: "./src/images/jalebi.webp" }
+            { title: "Samosa", calories: 250, image: "https://plus.unsplash.com/premium_photo-1695297516676-04a259917c03?q=80&w=3543&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+            { title: "Bhel Puri", calories: 150, image: "https://media.istockphoto.com/id/2075152539/photo/tasty-bhelpuri-is-a-savoury-snack-or-chaat-it-is-made-out-of-puffed-rice-vegetables-and-a.jpg?s=2048x2048&w=is&k=20&c=3nxg39iQVWtJGqmaKgqFNpNKNUzVgaKY2orT7mcpqvs=" },
+            { title: "Kachori", calories: 180, image: "https://images.unsplash.com/photo-1591465619385-1ef36826b8bd?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+            { title: "Pakora", calories: 100, image: "https://images.unsplash.com/photo-1666190091191-0cd0c5c8c5b5?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+            { title: "Dhokla", calories: 120, image: "https://media.istockphoto.com/id/1257018928/photo/gujarati-khaman-dhokla-or-steamed-gram-flour-puffy-snack-cake.jpg?s=2048x2048&w=is&k=20&c=_MlIFZ0ua2I19bMXEv3Q-ryruVlWCs45NKMKpamuzWE=" },
+            { title: "Tea", calories: 30, image: "https://media.istockphoto.com/id/1336601313/photo/top-view-of-indian-herbal-masala-chai-or-traditional-beverage-tea-with-milk-and-spices-kerala.jpg?s=1024x1024&w=is&k=20&c=6VGOiN8H6F1uhTwMxUNLXnUqmd8viaLwChR_JNEMYoI=" },
+            { title: "Coffee", calories: 50, image: "https://plus.unsplash.com/premium_photo-1675435644687-562e8042b9db?q=80&w=3449&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+            { title: "Jalebi", calories: 180, image: "https://media.istockphoto.com/id/1406503800/photo/special-indian-sweet-jalebi-or-jilabi-jeelebi-and-jilapi-served-in-dish-isolated-on-dark.jpg?s=2048x2048&w=is&k=20&c=qX8IrqM5aBxRzYxnveM7xnSfR7UNLnP1d3hUHOr1NA0=" }
           ]
         };
       default:
